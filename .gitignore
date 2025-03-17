@@ -15,3 +15,7 @@ venv/
 # Ignore temporary files
 *.log
 .DS_Store
+
+# Ignore logs and outputs
+logs/
+outputs/
