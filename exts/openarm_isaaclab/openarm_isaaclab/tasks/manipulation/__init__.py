@@ -1,10 +1,10 @@
-i# Copyright (c) 2022-2025, The Isaac Lab Project Developers.
+# Copyright (c) 2022-2025, The Isaac Lab Project Developers.
 # Copyright (c) 2025, Reazon Holdings, inc.
 # All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-mport gymnasium as gym
+import gymnasium as gym
 
 from . import agents
 

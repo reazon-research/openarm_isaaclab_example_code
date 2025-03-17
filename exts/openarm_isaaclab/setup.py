@@ -4,7 +4,7 @@ import toml
 from setuptools import setup
 
 EXTENSION_PATH = os.path.dirname(os.path.realpath(__file__))
-EXTENSION_TOML_DATA = toml.load(os.path.join(EXTENSION_PATH, "pyproject.toml"))
+EXTENSION_TOML_DATA = toml.load(os.path.join(EXTENSION_PATH, "config", "pyproject.toml"))
 
 INSTALL_REQUIRES = [
     "psutil",
