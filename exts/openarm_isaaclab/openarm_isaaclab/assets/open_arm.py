@@ -13,7 +13,7 @@ from openarm_isaaclab import OPENARM_ROOT_DIR
 
 OPEN_ARM_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=f"{OPENARM_ROOT_DIR}/usds/openarm_grip.usd",
+        usd_path=f"{OPENARM_ROOT_DIR}/usds/openarm.usd",
         activate_contact_sensors=False,
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,
@@ -27,15 +27,15 @@ OPEN_ARM_CFG = ArticulationCfg(
     ),
     init_state = ArticulationCfg.InitialStateCfg(
         joint_pos={
-            "rev1": 1.57,
-            "rev2": -1, #-1.527,      # (-3.05433 + 0) / 2
-            "rev3": 0.0,
-            "rev4": -0.50,        # (-2.0 + 0) / 2
+            "rev1": 0.0,
+            "rev2": 0.0, 
+            "rev3": -1.57,
+            "rev4": 2.5,       
             "rev5": 0.0,
-            "rev6": 0.6354,      # (-0.3 + 1.5708) / 2
+            "rev6": 0.0,      
             "rev7": 0.0,
-            "slider_left": -0.02275,   # (-0.0455 + 0) / 2
-            "slider_right": -0.02275,  # 同上
+            "left_pris1": 0.0,   
+            "right_pris2": 0.0,  
         },
     ),
     actuators = {
@@ -44,17 +44,17 @@ OPEN_ARM_CFG = ArticulationCfg(
             effort_limit=100.0,        # ※各ジョイントに十分なトルク余裕を与える例
             velocity_limit=2.5,        # ctrlrangeから推定した動作速度（例）
             stiffness=100.0,            # panda例に倣い設定
-            damping=1.0,
+            damping=5.0,
         ),
         "openarm_forearm": ImplicitActuatorCfg(
             joint_names_expr=["rev5", "rev6", "rev7"],
             effort_limit=100.0,         # 前腕部は比較的小さいトルクで十分と想定
             velocity_limit=2.0,
             stiffness=100.0,
-            damping=1.0,
+            damping=5.0,
         ),
         "openarm_gripper": ImplicitActuatorCfg(
-            joint_names_expr=["slider_left", "slider_right"],
+            joint_names_expr=["left_pris1", "right_pris2"],
             effort_limit=200.0,        # グリッパは比較的高い力が必要
             velocity_limit=0.2,
             stiffness=2000.0,
