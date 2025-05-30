@@ -7,8 +7,8 @@ From this point on, it is assumed that you have created a virtual environment na
 Navigate to the same directory where IsaacLab is cloned and execute the following commands:
 
 ```bash
-git clone https://github.com/reazon-research/openarm-isaaclab.git
-cd openarm-isaaclab
+git clone https://github.com/reazon-research/openarm_isaaclab.git
+cd openarm_isaaclab
 python -m pip install -e exts/openarm_isaaclab
 ```
 
