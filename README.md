@@ -16,7 +16,7 @@ After completing this step, the directory structure should look like this:
 
 ```
 |-IsaacLab
-|-openarm-isaaclab
+|-openarm_isaaclab
 ```
 
 ### ③ Edit train.py and play.py
@@ -42,12 +42,12 @@ This ensures that the environment is properly registered and recognized.
 Run the following command to start training:
 
 ```bash
-(env_isaaclab) reazon@reazon:~/isaac/openarm-isaaclab$ bash ../IsaacLab/isaaclab.sh -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Reach-OpenArm-v0 --num_envs 2048
+(env_isaaclab) reazon@reazon:~/isaac/openarm_isaaclab$ bash ../IsaacLab/isaaclab.sh -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Reach-OpenArm-v0 --num_envs 2048
 ```
 
 ### ⑤ Replay Trained Model
 To replay a trained model, use the following command:
 
 ```bash
-(env_isaaclab) reazon@reazon:~/isaac/openarm-isaaclab$ bash ../IsaacLab/isaaclab.sh -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm-v0 --num_envs 2048
+(env_isaaclab) reazon@reazon:~/isaac/openarm_isaaclab$ bash ../IsaacLab/isaaclab.sh -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm-v0 --num_envs 2048
 ```
