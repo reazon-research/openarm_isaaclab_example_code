@@ -31,18 +31,17 @@ class OpenArmEventCfg:
 class OpenArmReachEnvCfg(ReachEnvCfg):
 
     events: OpenArmEventCfg = OpenArmEventCfg()
-    
+
     def __post_init__(self):
         super().__post_init__()
 
         self.scene.robot = OPEN_ARM_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
-
         self.rewards.end_effector_position_tracking.params["asset_cfg"].body_names = ["link8"]
         self.rewards.end_effector_position_tracking_fine_grained.params["asset_cfg"].body_names = ["link8"]
         self.rewards.end_effector_orientation_tracking.params["asset_cfg"].body_names = ["link8"]
 
         self.actions.arm_action = mdp.JointPositionActionCfg(
-            asset_name="robot", 
+            asset_name="robot",
             joint_names=[
                 "rev1",
                 "rev2",
@@ -50,11 +49,13 @@ class OpenArmReachEnvCfg(ReachEnvCfg):
                 "rev4",
                 "rev5",
                 "rev6",
-                "rev7"], 
-            scale=0.1, 
+                "rev7",
+                # "virtual_gripper_center"
+                ],
+            scale=1,
             use_default_offset=True
         )
-        
+
         self.commands.ee_pose.body_name = "link8"
         # self.commands.ee_pose.ranges.pitch = (math.pi, math.pi)
         self.commands.ee_pose.ranges.pos_x = (0.15, 0.35)
