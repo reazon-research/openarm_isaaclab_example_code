@@ -9,7 +9,7 @@ Navigate to the same directory where IsaacLab is cloned and execute the followin
 ```bash
 git clone https://github.com/reazon-research/openarm_isaaclab_example_code
 cd openarm_isaaclab_example_code
-python -m pip install -e exts/openarm_isaaclab_example_code
+python -m pip install -e exts/openarm_isaaclab
 ```
 
 After completing this step, the directory structure should look like this:

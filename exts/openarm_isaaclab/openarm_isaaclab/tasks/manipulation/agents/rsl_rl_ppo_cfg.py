@@ -19,7 +19,7 @@ class OpenArmReachPPORunnerCfg(RslRlOnPolicyRunnerCfg):
     resume = False
     empirical_normalization = True
     policy = RslRlPpoActorCriticCfg(
-        init_noise_std=1.0, 
+        init_noise_std=1.0,
         actor_hidden_dims=[64, 64],
         critic_hidden_dims=[64, 64],
         activation="elu",
