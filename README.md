@@ -16,7 +16,7 @@ After completing this step, the directory structure should look like this:
 
 ```
 |-IsaacLab
-|-openarm_isaaclab
+|-openarm_isaaclab_example_code
 ```
 
 ### ③ Edit train.py and play.py
