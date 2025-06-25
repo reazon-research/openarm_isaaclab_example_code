@@ -35,7 +35,7 @@ OPEN_ARM_CFG = ArticulationCfg(
             "Revolute_1": 0.0,
             "Revolute_2": 0.0,
             "Revolute_3": 0.0,
-            "Revolute_4": 1.6,
+            "Revolute_4": 1.570796,
             "Revolute_5": 0.0,
             "Revolute_6": 0.0,
             "Revolute_7": 0.0,
