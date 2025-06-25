@@ -31,29 +31,44 @@ class OpenArmReachEnvCfg(ReachEnvCfg):
         # self.scene.robot.actuators[""].stiffness = 5.0
         # self.scene.robot.actuators[""].damping = 1.0
         # override rewards
-        self.rewards.end_effector_position_tracking.params["asset_cfg"].body_names = ["EE_center"]
-        self.rewards.end_effector_position_tracking_fine_grained.params["asset_cfg"].body_names = ["EE_center"]
-        self.rewards.end_effector_orientation_tracking.params["asset_cfg"].body_names = ["EE_center"]
+        self.rewards.end_effector_position_tracking.params["asset_cfg"].body_names = ["URDF_swivel_rotor_v24_1"]
+        self.rewards.end_effector_position_tracking_fine_grained.params["asset_cfg"].body_names = ["URDF_swivel_rotor_v24_1"]
+        self.rewards.end_effector_orientation_tracking.params["asset_cfg"].body_names = ["URDF_swivel_rotor_v24_1"]
+        # self.rewards.end_effector_position_tracking.params["asset_cfg"].body_names = ["EE_center"]
+        # self.rewards.end_effector_position_tracking_fine_grained.params["asset_cfg"].body_names = ["EE_center"]
+        # self.rewards.end_effector_orientation_tracking.params["asset_cfg"].body_names = ["EE_center"]
 
         # override actions
         self.actions.arm_action = mdp.JointPositionActionCfg(
             asset_name="robot",
             joint_names=[
-                "Revolute.*",
-                "Slider.*",
-                "EE_center"],
-            scale=0.5,
+                "Revolute_1",
+                "Revolute_2",
+                "Revolute_3",
+                "Revolute_4",
+                "Revolute_5",
+                "Revolute_6",
+                "Revolute_7",
+                "Revolute_8",
+                "Revolute_9",
+                "Revolute_10",
+                "Slider_1",
+                "Slider_2",
+                # "EE_center"
+                ],
+            scale=1.0,
             use_default_offset=True, # False
         )
 
         # override command generator body
         # end-effector is along z-direction
-        self.commands.ee_pose.body_name = "EE_center"
-        self.commands.ee_pose.ranges.pos_x = (0.15, 0.35)
+        self.commands.ee_pose.body_name = "URDF_swivel_rotor_v24_1"
+        #self.commands.ee_pose.body_name = "EE_center"
+        self.commands.ee_pose.ranges.pos_x = (0.25, 0.35)
         self.commands.ee_pose.ranges.pos_z = (0.25, 0.35)
-        self.commands.ee_pose.ranges.roll = (math.pi/2, math.pi/2)
-        self.commands.ee_pose.ranges.pitch = (0,0)
-        self.commands.ee_pose.ranges.yaw = (math.pi, math.pi)
+        self.commands.ee_pose.ranges.roll = (0,0)
+        self.commands.ee_pose.ranges.pitch = (math.pi/2,math.pi/2)
+        self.commands.ee_pose.ranges.yaw = (0,0)
 
 @configclass
 class OpenArmReachEnvCfg_PLAY(OpenArmReachEnvCfg):

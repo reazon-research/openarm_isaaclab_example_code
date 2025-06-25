@@ -30,7 +30,7 @@ from openarm_isaaclab import OPENARM_ROOT_DIR
 
 OPEN_ARM_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=f"{OPENARM_ROOT_DIR}/usds/openarm/openarm.usd",
+        usd_path=f"{OPENARM_ROOT_DIR}/usds/openarm_v1_3.usd",
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,
             max_depenetration_velocity=5.0,
@@ -51,8 +51,8 @@ OPEN_ARM_CFG = ArticulationCfg(
         joint_pos={
             "Revolute_1": 0.0,
             "Revolute_2": 0.0,
-            "Revolute_3": 1.57,
-            "Revolute_4": 2.5,
+            "Revolute_3": 0.0,
+            "Revolute_4": 1.6,
             "Revolute_5": 0.0,
             "Revolute_6": 0.0,
             "Revolute_7": 0.0,
@@ -61,7 +61,7 @@ OPEN_ARM_CFG = ArticulationCfg(
             "Revolute_10": 0.0,
             "Slider_1": 0.0,
             "Slider_2": 0.0,
-            "EE_point": 0.0,
+            # "EE_point": 0.0,
         },
     ),
     actuators = {
@@ -69,24 +69,25 @@ OPEN_ARM_CFG = ArticulationCfg(
             joint_names_expr=["Revolute_1", "Revolute_2", "Revolute_3", "Revolute_4"],
             effort_limit=100.0,
             velocity_limit=100.0,
-            stiffness=5.0,
+            stiffness=10.0,
             damping=1.0,
         ),
         "openarm_forearm": ImplicitActuatorCfg(
             joint_names_expr=["Revolute_5", "Revolute_6", "Revolute_7"],
             effort_limit=100.0,
             velocity_limit=100.0,
-            stiffness=5.0,
+            stiffness=10.0,
             damping=1.0,
         ),
         "openarm_gripper": ImplicitActuatorCfg(
-            joint_names_expr=["Revolute_8", "Revolute_9", "Revolute_10", "Slider_1", "Slider_2", "EE_point"],
+            joint_names_expr=["Revolute_8", "Revolute_9", "Revolute_10", "Slider_1", "Slider_2"],# "EE_point"],
             effort_limit=100.0,
             velocity_limit=100.0,
-            stiffness=5.0,
+            stiffness=10.0,
             damping=1.0,
         ),
     },
+    soft_joint_pos_limit_factor = 1.0,
 )
 
 ##
