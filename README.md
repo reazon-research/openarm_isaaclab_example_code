@@ -1,4 +1,9 @@
 ## Installation Guide
+
+### Specification
+This repository has been tested on Ubuntu 22.04 and Windows.
+We do not guarantee that it will work on other platforms.
+
 ### ① Install ISAAC SIM and ISAAC LAB
 The required version of ISAAC SIM is 4.5.0.
 From this point on, it is assumed that you have created a virtual environment named env_isaaclab using pyenv and will be working within that environment.
@@ -8,7 +13,7 @@ Navigate to the same directory where IsaacLab is cloned and execute the followin
 
 ```bash
 git clone https://github.com/reazon-research/openarm_isaaclab.git
-cd openarm_isaaclab
+cd openarm_isaaclab_example_code
 python -m pip install -e exts/openarm_isaaclab
 ```
 
@@ -31,7 +36,7 @@ These scripts are used for training reinforcement learning models and replaying 
 Specifically, add the following line at the beginning of train.py and play.py:
 
 ```bash
-import openarm_isaaclab.tasks.manipulation
+import openarm_isaaclab.reach
 ```
 
 This ensures that the environment is properly registered and recognized.
@@ -39,15 +44,25 @@ This ensures that the environment is properly registered and recognized.
 
 
 ### ④ Run Training
-Run the following command to start training:
+Run the following command to start training on Linux:
 
 ```bash
-(env_isaaclab) reazon@reazon:~/isaac/openarm_isaaclab$ bash ../IsaacLab/isaaclab.sh -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Reach-OpenArm-v0 --num_envs 2048
+bash ./isaaclab.sh -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Reach-OpenArm-v0 --num_envs 2048
+```
+
+If you are running this on Windows, type this:
+```bash
+isaaclab.bat -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Reach-OpenArm-v0 --num_envs 2048
 ```
 
 ### ⑤ Replay Trained Model
-To replay a trained model, use the following command:
+To replay a trained model on Linux, use the following command:
 
 ```bash
-(env_isaaclab) reazon@reazon:~/isaac/openarm_isaaclab$ bash ../IsaacLab/isaaclab.sh -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm-v0 --num_envs 2048
+bash ./isaaclab.sh -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm-v0 --num_envs 2048
+```
+
+If you are running this on Windows, type this:
+```bash
+isaaclab.bat -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm-v0 --num_envs 2048
 ```
