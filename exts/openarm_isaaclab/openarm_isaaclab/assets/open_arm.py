@@ -32,7 +32,7 @@ OPEN_ARM_CFG = ArticulationCfg(
     ),
     init_state = ArticulationCfg.InitialStateCfg(
         joint_pos={
-            "Revolute_1": 0.0,
+            "Revolute_1": 1.570796,
             "Revolute_2": 0.0,
             "Revolute_3": 0.0,
             "Revolute_4": 1.570796,
