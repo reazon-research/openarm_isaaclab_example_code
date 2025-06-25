@@ -33,40 +33,61 @@ class OpenArmReachEnvCfg(ReachEnvCfg):
     events: OpenArmEventCfg = OpenArmEventCfg()
 
     def __post_init__(self):
+        # post init of parent
         super().__post_init__()
 
+        # switch robot to OpenArm
         self.scene.robot = OPEN_ARM_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
+        # set stiffness and damping
+        # self.scene.robot.actuators[""].stiffness = 5.0
+        # self.scene.robot.actuators[""].damping = 1.0
+        # override rewards
+        self.rewards.end_effector_position_tracking.params["asset_cfg"].body_names = ["URDF_swivel_rotor_v24_1"]
+        self.rewards.end_effector_position_tracking_fine_grained.params["asset_cfg"].body_names = ["URDF_swivel_rotor_v24_1"]
+        self.rewards.end_effector_orientation_tracking.params["asset_cfg"].body_names = ["URDF_swivel_rotor_v24_1"]
+        # self.rewards.end_effector_position_tracking.params["asset_cfg"].body_names = ["EE_center"]
+        # self.rewards.end_effector_position_tracking_fine_grained.params["asset_cfg"].body_names = ["EE_center"]
+        # self.rewards.end_effector_orientation_tracking.params["asset_cfg"].body_names = ["EE_center"]
 
-        self.rewards.end_effector_position_tracking.params["asset_cfg"].body_names = ["link_right_jaw"]
-        self.rewards.end_effector_position_tracking_fine_grained.params["asset_cfg"].body_names = ["link_right_jaw"]
-        self.rewards.end_effector_orientation_tracking.params["asset_cfg"].body_names = ["link_right_jaw"]
-
+        # override actions
         self.actions.arm_action = mdp.JointPositionActionCfg(
             asset_name="robot",
             joint_names=[
-                "rev1",
-                "rev2",
-                "rev3",
-                "rev4",
-                "rev5",
-                "rev6",
-                "rev7"],
-            scale=1,
-            use_default_offset=True
+                "Revolute_1",
+                "Revolute_2",
+                "Revolute_3",
+                "Revolute_4",
+                "Revolute_5",
+                "Revolute_6",
+                "Revolute_7",
+                "Revolute_8",
+                "Revolute_9",
+                "Revolute_10",
+                "Slider_1",
+                "Slider_2",
+                # "EE_center"
+                ],
+            scale=1.0,
+            use_default_offset=True, # False
         )
 
-        self.commands.ee_pose.body_name = "link_right_jaw"
-        # self.commands.ee_pose.ranges.pitch = (math.pi, math.pi)
-        self.commands.ee_pose.ranges.pos_x = (0.15, 0.35)
+        # override command generator body
+        # end-effector is along z-direction
+        self.commands.ee_pose.body_name = "URDF_swivel_rotor_v24_1"
+        #self.commands.ee_pose.body_name = "EE_center"
+        self.commands.ee_pose.ranges.pos_x = (0.25, 0.35)
         self.commands.ee_pose.ranges.pos_z = (0.25, 0.35)
-        self.commands.ee_pose.ranges.roll = (math.pi/2, math.pi/2)  # (0, 0)
-        self.commands.ee_pose.ranges.pitch = (0,0)#(-math.pi/2, math.pi/2) # (0, 0)
-        self.commands.ee_pose.ranges.yaw = (math.pi, math.pi)# (math.pi/2, 3*math.pi/2)  # (math.pi, math.pi)
+        self.commands.ee_pose.ranges.roll = (0,0)
+        self.commands.ee_pose.ranges.pitch = (math.pi/2,math.pi/2)
+        self.commands.ee_pose.ranges.yaw = (0,0)
 
 @configclass
 class OpenArmReachEnvCfg_PLAY(OpenArmReachEnvCfg):
     def __post_init__(self):
+        # post init of parent
         super().__post_init__()
+        # make a smaller scene for play
         self.scene.num_envs = 50
         self.scene.env_spacing = 2.5
+        # disable randomization for play
         self.observations.policy.enable_corruption = False

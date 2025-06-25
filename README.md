@@ -49,5 +49,5 @@ Run the following command to start training:
 To replay a trained model, use the following command:
 
 ```bash
-(env_isaaclab) reazon@reazon:~/isaac/openarm_isaaclab$ bash ../IsaacLab/isaaclab.sh -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm-v0 --num_envs 2048
+(env_isaaclab) reazon@reazon:~/isaac/openarm_isaaclab$ bash ../IsaacLab/isaaclab.sh -p ../IsaacLab/scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm-v0 --num_envs 16
 ```
