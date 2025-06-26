@@ -4,15 +4,16 @@ import toml
 from setuptools import setup
 
 EXTENSION_PATH = os.path.dirname(os.path.realpath(__file__))
-EXTENSION_TOML_DATA = toml.load(os.path.join(EXTENSION_PATH, "config", "pyproject.toml"))
+EXTENSION_TOML_DATA = toml.load(os.path.join(EXTENSION_PATH, "config", "extension.toml"))
 
 INSTALL_REQUIRES = [
     "psutil",
-]
+    "toml"
+],
 
 setup(
     name="openarm-isaaclab",
-    packages=["openarm_isaaclab"],
+    packages=["reach"],
     author=EXTENSION_TOML_DATA["package"]["author"],
     maintainer=EXTENSION_TOML_DATA["package"]["maintainer"],
     url=EXTENSION_TOML_DATA["package"]["repository"],
