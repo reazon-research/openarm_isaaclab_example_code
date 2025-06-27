@@ -56,7 +56,7 @@ class OpenArmReachEnvCfg(ReachEnvCfg):
                 "Slider_2",
                 # "EE_center"
                 ],
-            scale=1.0,
+            scale=0.5,
             use_default_offset=True, # False
         )
 
