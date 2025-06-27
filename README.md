@@ -30,22 +30,22 @@ This ensures that the environment is properly registered and recognized.
 Run the following command to start training on Linux:
 
 ```bash
-bash ./isaaclab.sh -p ./openarm_isaaclab_example_code/scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Reach-OpenArm-v1 --num_envs 2048
+bash ./isaaclab.sh -p ./openarm_isaaclab_example_code/scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Reach-OpenArm --num_envs 2048 --headless
 ```
 
 If you are running this on Windows, type this:
 ```bash
-isaaclab.bat -p .\openarm_isaaclab_example_code\scripts\reinforcement_learning\rsl_rl\train.py --task Isaac-Reach-OpenArm-v1 --num_envs 2048
+isaaclab.bat -p .\openarm_isaaclab_example_code\scripts\reinforcement_learning\rsl_rl\train.py --task Isaac-Reach-OpenArm --num_envs 2048 --headless
 ```
 
 ### ⑤ Replay Trained Model
 To replay a trained model on Linux, use the following command:
 
 ```bash
-bash ./isaaclab.sh -p ./openarm_isaaclab_example_code/scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm-v1 --num_envs 64
+bash ./isaaclab.sh -p ./openarm_isaaclab_example_code/scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm --num_envs 64
 ```
 
 If you are running this on Windows, type this:
 ```bash
-isaaclab.bat -p .\openarm_isaaclab_example_code\scripts\reinforcement_learning\rsl_rl\play.py --task Isaac-Reach-OpenArm-v1 --num_envs 64
+isaaclab.bat -p .\openarm_isaaclab_example_code\scripts\reinforcement_learning\rsl_rl\play.py --task Isaac-Reach-OpenArm --num_envs 64
 ```
