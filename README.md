@@ -43,12 +43,12 @@ isaaclab.bat -p .\scripts\reinforcement_learning\rsl_rl\play.py --task Isaac-Rea
 
 ### ⑤ Analyze logs
 To compare and analyze trained model on Linux, use the following command:
-```
+```bash
 ./isaaclab.sh -p -m tensorboard.main --logdir=logs
 ```
 
 If you are running this on Windows, type this:
-```
+```bash
 isaaclab.bat -p -m tensorboard.main --logdir=logs
 ```
 
