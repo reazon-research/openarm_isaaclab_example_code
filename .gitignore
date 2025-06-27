@@ -1,6 +1,7 @@
 # Ignore compiled Python files
 __pycache__/
 *.py[cod]
+.vscode
 
 # Ignore egg and build files
 *.egg-info/
