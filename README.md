@@ -21,7 +21,7 @@ cd ../../../..
 Run the following command to start training:
 
 ```bash
-bash ./isaaclab.sh -p ./scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Reach-OpenArm-v1 --headless
+./isaaclab.sh -p ./scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Reach-OpenArm-v1 --headless
 ```
 
 If you are running this on Windows, type this:
@@ -33,7 +33,7 @@ isaaclab.bat -p .\scripts\reinforcement_learning\rsl_rl\train.py --task Isaac-Re
 To replay a trained model on Linux, use the following command:
 
 ```bash
-bash ./isaaclab.sh -p ./scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm-v1 --num_envs 64
+./isaaclab.sh -p ./scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm-v1 --num_envs 64
 ```
 
 If you are running this on Windows, type this:
@@ -52,4 +52,4 @@ If you are running this on Windows, type this:
 isaaclab.bat -p -m tensorboard.main --logdir=logs
 ```
 
-And open the search engine and go to `http://localhost:6006/`
+And open the google and go to `http://localhost:6006/`
