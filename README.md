@@ -1,4 +1,9 @@
 ## Installation Guide
+
+### Specification
+This repository has been tested on Ubuntu 22.04 and Windows 11.
+We do not guarantee that it will work on other platforms.
+
 ### ① Install ISAAC SIM and ISAAC LAB
 The required version of ISAAC SIM is 4.5.0.
 From this point on, it is assumed that you have created a virtual environment named env_isaaclab using pyenv and will be working within that environment.
