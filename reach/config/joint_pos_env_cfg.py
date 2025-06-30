@@ -66,7 +66,7 @@ class OpenArmReachEnvCfg(ReachEnvCfg):
         #self.commands.ee_pose.body_name = "EE_center"
         self.commands.ee_pose.ranges.pos_x = (0.20, 0.30)
         self.commands.ee_pose.ranges.pos_z = (0.15, 0.25)
-        self.commands.ee_pose.ranges.roll = (-math.pi/3,math.pi/3)
+        self.commands.ee_pose.ranges.roll = (0.0, 0.0) # (-math.pi/3,math.pi/3)
         self.commands.ee_pose.ranges.pitch = (math.pi/2,math.pi/2)
         self.commands.ee_pose.ranges.yaw = (0,0)
 

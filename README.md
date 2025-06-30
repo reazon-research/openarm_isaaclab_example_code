@@ -9,7 +9,6 @@ The required version of ISAAC SIM is v4.5.0. and ISAAC LAB v2.1.0
 From this point on, it is assumed that you have created a virtual environment named env_isaaclab using pyenv and will be working within that environment.
 
 ### ② Install openarm-isaaclab
-Navigate to the same directory where IsaacLab is cloned and execute the following commands:
 
 ```bash
 conda activate env_isaaclab
@@ -42,20 +41,6 @@ Replace `<TASK_NAME>` with one of the following available tasks:
 isaaclab.bat -p .\scripts\reinforcement_learning\rsl_rl\train.py --task <TASK_NAME> --headless
 ```
 
-#### Examples
-
-**Linux:**
-
-```bash
-./isaaclab.sh -p ./scripts/reinforcement_learning/rsl_rl/train.py --task Isaac-Reach-OpenArm-v1 --headless
-```
-
-**Windows:**
-
-```bash
-isaaclab.bat -p .\scripts\reinforcement_learning\rsl_rl\train.py --task Isaac-Lift-Cube-OpenArm-v0 --headless
-```
-
 ### ④ Replay Trained Model
 
 #### General Format
@@ -70,20 +55,6 @@ isaaclab.bat -p .\scripts\reinforcement_learning\rsl_rl\train.py --task Isaac-Li
 
 ```bash
 isaaclab.bat -p .\scripts\reinforcement_learning\rsl_rl\play.py --task <TASK_NAME> --num_envs 64
-```
-
-#### Examples
-
-**Linux:**
-
-```bash
-./isaaclab.sh -p ./scripts/reinforcement_learning/rsl_rl/play.py --task Isaac-Reach-OpenArm-v1 --num_envs 64
-```
-
-**Windows:**
-
-```bash
-isaaclab.bat -p .\scripts\reinforcement_learning\rsl_rl\play.py --task Isaac-Lift-Cube-OpenArm-v0 --num_envs 64
 ```
 
 ### ⑤ Analyze logs
