@@ -16,7 +16,7 @@ class OpenArmLiftCubePPORunnerCfg(RslRlOnPolicyRunnerCfg):
     experiment_name = "openarm_lift"
     empirical_normalization = False
     policy = RslRlPpoActorCriticCfg(
-        init_noise_std=0.5,
+        init_noise_std=1.0,
         actor_hidden_dims=[256, 128, 64],
         critic_hidden_dims=[256, 128, 64],
         activation="elu",

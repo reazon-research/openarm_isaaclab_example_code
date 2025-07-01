@@ -36,30 +36,26 @@ class OpenArmCubeLiftEnvCfg(LiftEnvCfg):
             asset_name="robot",
             joint_names=[
                 "Revolute_.*",
-                "Slider_.*",
-                # "EE_center"
                 ],
-            scale=1.0,
+            scale=0.5,
             use_default_offset=True, # False
         )
 
         self.actions.gripper_action = mdp.BinaryJointPositionActionCfg(
             asset_name="robot",
             joint_names=["Slider.*"],
-            open_command_expr={"Slider_.*": 0.04},
-            close_command_expr={"Slider_.*": 0.0},
+            open_command_expr={"Slider.*": 0.0},
+            close_command_expr={"Slider.*": 0.42},
         )
 
         # Set the body name for the end effector
         self.commands.object_pose.body_name = "URDF_swivel_rotor_v24_1"
         self.commands.object_pose.ranges.pitch = (math.pi/2, math.pi/2)
-        self.commands.object_pose.ranges.pos_x = (0.20, 0.30)
-        self.commands.object_pose.ranges.pos_z = (0.15, 0.25)
 
         # Set Cube as object
         self.scene.object = RigidObjectCfg(
             prim_path="{ENV_REGEX_NS}/Object",
-            init_state=RigidObjectCfg.InitialStateCfg(pos=[0.35, 0, 0.055], rot=[1, 0, 0, 0]),
+            init_state=RigidObjectCfg.InitialStateCfg(pos=[0.4, 0, 0.055], rot=[1, 0, 0, 0]),
             spawn=UsdFileCfg(
                 usd_path=f"{ISAAC_NUCLEUS_DIR}/Props/Blocks/DexCube/dex_cube_instanceable.usd",
                 scale=(0.8, 0.8, 0.8),
@@ -89,7 +85,7 @@ class OpenArmCubeLiftEnvCfg(LiftEnvCfg):
                     prim_path="{ENV_REGEX_NS}/Robot/URDF_swivel_rotor_v24_1",
                     name="end_effector",
                     offset=OffsetCfg(
-                        pos=[0.0, 0.0, 0.95],
+                        pos=[0.0, 0.0, 0.1034],
                     ),
                 ),
             ],

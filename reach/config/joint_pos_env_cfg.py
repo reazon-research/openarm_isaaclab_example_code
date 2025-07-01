@@ -42,18 +42,8 @@ class OpenArmReachEnvCfg(ReachEnvCfg):
         self.actions.arm_action = mdp.JointPositionActionCfg(
             asset_name="robot",
             joint_names=[
-                "Revolute_1",
-                "Revolute_2",
-                "Revolute_3",
-                "Revolute_4",
-                "Revolute_5",
-                "Revolute_6",
-                "Revolute_7",
-                "Revolute_8",
-                "Revolute_9",
-                "Revolute_10",
-                "Slider_1",
-                "Slider_2",
+                "Revolute_.*",
+                "Slider_.*",
                 # "EE_center"
                 ],
             scale=0.5,

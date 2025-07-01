@@ -6,7 +6,7 @@ We do not guarantee that it will work on other platforms.
 
 ### ① Install ISAAC SIM and ISAAC LAB
 The required version of ISAAC SIM is v4.5.0. and ISAAC LAB v2.1.0
-From this point on, it is assumed that you have created a virtual environment named env_isaaclab using pyenv and will be working within that environment.
+From this point on, it is assumed that you have created a virtual environment named env_isaaclab using miniconda or anaconda and will be working within that environment.
 
 ### ② Install openarm-isaaclab
 
