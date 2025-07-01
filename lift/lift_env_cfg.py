@@ -111,10 +111,8 @@ class ObjectTableSceneCfg(InteractiveSceneCfg):
     # Table
     table = AssetBaseCfg(
         prim_path="{ENV_REGEX_NS}/Table",
-        spawn=sim_utils.UsdFileCfg(
-            usd_path=f"{OPENARM_ROOT_DIR}/../usds/openarm/openarm.usd",
-        ),
-        init_state=AssetBaseCfg.InitialStateCfg(pos=(0.55, 0.0, 0.0), rot=(0.70711, 0.0, 0.0, 0.70711)),
+        init_state=AssetBaseCfg.InitialStateCfg(pos=[0.5, 0, 0], rot=[0.707, 0, 0, 0.707]),
+        spawn=UsdFileCfg(usd_path=f"{ISAAC_NUCLEUS_DIR}/Props/Mounts/SeattleLabTable/table_instanceable.usd"),
     )
 
     # plane

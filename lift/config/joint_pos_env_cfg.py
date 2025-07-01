@@ -71,8 +71,6 @@ class OpenArmCubeLiftEnvCfg(LiftEnvCfg):
         )
 
         # Listens to the required transforms
-        # TODO check here
-        # maybe tranforms from link 8 to grip point
         marker_cfg = FRAME_MARKER_CFG.copy()
         marker_cfg.markers["frame"].scale = (0.1, 0.1, 0.1)
         marker_cfg.prim_path = "/Visuals/FrameTransformer"
