@@ -5,7 +5,8 @@ This repository has been tested on Ubuntu 22.04 and Windows 11.
 We do not guarantee that it will work on other platforms.
 
 ### ① Install ISAAC SIM and ISAAC LAB
-The required version of ISAAC SIM is v4.5.0. and ISAAC LAB v2.1.0
+The required version of ISAAC SIM is v4.5.0. through this (here)[https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/install_workstation.html] and ISAAC LAB v2.1.0 through (here)[https://isaac-sim.github.io/IsaacLab/v2.1.0/source/setup/installation/binaries_installation.html].
+Note that you must use a binary install to access the code inside Isaac Sim and Lab.
 From this point on, it is assumed that you have created a virtual environment named env_isaaclab using miniconda or anaconda and will be working within that environment.
 
 ### ② Install openarm-isaaclab
