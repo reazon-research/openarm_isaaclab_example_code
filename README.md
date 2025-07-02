@@ -27,6 +27,7 @@ Replace `<TASK_NAME>` with one of the following available tasks:
 | --------------------- | ---------------------------- |
 | Reach target position | `Isaac-Reach-OpenArm-v1`     |
 | Lift a cube           | `Isaac-Lift-Cube-OpenArm-v0` |
+| Stack cubes           | `Isaac-Stack-Cube-OpenArm-v0`|
 
 #### General Format
 
