@@ -15,6 +15,7 @@ from isaaclab_tasks.manager_based.manipulation.lift import mdp
 from isaaclab_tasks.manager_based.manipulation.lift.lift_env_cfg import LiftEnvCfg
 
 import math
+
 ##
 # Pre-defined configs
 ##
@@ -71,7 +72,6 @@ class OpenArmCubeLiftEnvCfg(LiftEnvCfg):
         )
 
         # Listens to the required transforms
-        #TODO maybe something is wrong here
         marker_cfg = FRAME_MARKER_CFG.copy()
         marker_cfg.markers["frame"].scale = (0.1, 0.1, 0.1)
         marker_cfg.prim_path = "/Visuals/FrameTransformer"
