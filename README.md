@@ -23,11 +23,11 @@ You can run different tasks by specifying the task name using the `--task` argum
 
 Replace `<TASK_NAME>` with one of the following available tasks:
 
-| Task Description      | Task Name                    |
-| --------------------- | ---------------------------- |
-| Reach target position | `Isaac-Reach-OpenArm-v1`     |
-| Lift a cube           | `Isaac-Lift-Cube-OpenArm-v0` |
-| Stack cubes           | `Isaac-Stack-Cube-OpenArm-v0`|
+| Task Description        | Task Name                      |
+| ----------------------- | ------------------------------ |
+| Reach target position   | `Isaac-Reach-OpenArm-v1`       |
+| Lift a cube             | `Isaac-Lift-Cube-OpenArm-v0`   |
+| Open a cabinet's drawer | `Isaac-Open-Drawer-OpenArm-v0` |
 
 #### General Format
 
@@ -44,7 +44,6 @@ isaaclab.bat -p .\scripts\reinforcement_learning\rsl_rl\train.py --task <TASK_NA
 ```
 
 ### ④ Replay Trained Model
-
 #### General Format
 
 **Linux:**
