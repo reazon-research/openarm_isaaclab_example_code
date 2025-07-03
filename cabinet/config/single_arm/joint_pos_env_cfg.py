@@ -57,21 +57,21 @@ class OpenArmCabinetEnvCfg(CabinetEnvCfg):
                     prim_path="{ENV_REGEX_NS}/Robot/URDF_swivel_rotor_v24_1",
                     name="ee_tcp",
                     offset=OffsetCfg(
-                        pos=(0.0, 0.0, 0.1034),
+                        pos=(0.0, 0.0, 0.09695),
                     ),
                 ),
                 FrameTransformerCfg.FrameCfg(
                     prim_path="{ENV_REGEX_NS}/Robot/URDF_left_jaw_swivel_v7_1",
                     name="tool_leftfinger",
                     offset=OffsetCfg(
-                        pos=(0.0, 0.0, 0.046),
+                        pos=(0.02, -0.0605, 0.07795),
                     ),
                 ),
                 FrameTransformerCfg.FrameCfg(
                     prim_path="{ENV_REGEX_NS}/Robot/URDF_right_jaw_swivel_v7_1",
                     name="tool_rightfinger",
                     offset=OffsetCfg(
-                        pos=(0.0, 0.0, 0.046),
+                        pos=(-0.02, 0.0605, 0.07795),
                     ),
                 ),
             ],

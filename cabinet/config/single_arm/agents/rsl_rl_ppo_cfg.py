@@ -16,13 +16,13 @@ class OpenArmCabinetPPORunnerCfg(RslRlOnPolicyRunnerCfg):
     experiment_name = "openarm_open_drawer"
     empirical_normalization = False
     policy = RslRlPpoActorCriticCfg(
-        init_noise_std=0.3,
+        init_noise_std=0.01,
         actor_hidden_dims=[256, 128, 64],
         critic_hidden_dims=[256, 128, 64],
         activation="elu",
     )
     algorithm = RslRlPpoAlgorithmCfg(
-        value_loss_coef=0.5,
+        value_loss_coef=1.0,
         use_clipped_value_loss=True,
         clip_param=0.2,
         entropy_coef=1e-3,
