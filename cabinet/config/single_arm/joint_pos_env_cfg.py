@@ -7,9 +7,9 @@ from isaaclab.sensors import FrameTransformerCfg
 from isaaclab.sensors.frame_transformer.frame_transformer_cfg import OffsetCfg
 from isaaclab.utils import configclass
 
-from isaaclab_tasks.manager_based.manipulation.cabinet import mdp
+from isaaclab_tasks.manager_based.openarm_manipulation.cabinet import mdp
 
-from isaaclab_tasks.manager_based.manipulation.cabinet.cabinet_env_cfg import (  # isort: skip
+from isaaclab_tasks.manager_based.openarm_manipulation.cabinet.cabinet_env_cfg import (  # isort: skip
     FRAME_MARKER_SMALL_CFG,
     CabinetEnvCfg,
 )
@@ -19,7 +19,6 @@ import math
 ##
 # Pre-defined configs
 ##
-from isaaclab_assets.robots.franka import FRANKA_PANDA_CFG  # isort: skip
 from isaaclab_tasks.manager_based.openarm_manipulation.cabinet.cabinet_env_cfg import OPEN_ARM_CFG
 
 
