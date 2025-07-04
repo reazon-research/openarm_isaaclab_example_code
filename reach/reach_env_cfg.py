@@ -25,70 +25,7 @@ from isaaclab.utils.noise import AdditiveUniformNoiseCfg as Unoise
 
 import isaaclab_tasks.manager_based.openarm_manipulation.reach.mdp as mdp
 
-from . import OPENARM_ROOT_DIR
-
-OPEN_ARM_CFG = ArticulationCfg(
-    spawn=sim_utils.UsdFileCfg(
-        usd_path=f"{OPENARM_ROOT_DIR}/../usds/openarm_v1_3.usd",
-        rigid_props=sim_utils.RigidBodyPropertiesCfg(
-            disable_gravity=False,
-            max_depenetration_velocity=5.0,
-            # rigid_body_enabled=True,
-            # max_linear_velocity=1000.0,
-            # max_angular_velocity=1000.0,
-            # enable_gyroscopic_forces=True,
-        ),
-        articulation_props=sim_utils.ArticulationRootPropertiesCfg(
-            enabled_self_collisions=False,
-            solver_position_iteration_count=8,
-            solver_velocity_iteration_count=0,
-            # sleep_threshold=0.005,
-            # stabilization_threshold=0.001,
-        ),
-    ),
-    init_state = ArticulationCfg.InitialStateCfg(
-        # pos=(0.0, 0.0, 0.0),
-        joint_pos={
-            "Revolute_1": 0.0,
-            "Revolute_2": 0.0,
-            "Revolute_3": 0.0,
-            "Revolute_4": 1.6,
-            "Revolute_5": 0.0,
-            "Revolute_6": 0.0,
-            "Revolute_7": 0.0,
-            "Revolute_8": 0.0,
-            "Revolute_9": 0.0,
-            "Revolute_10": 0.0,
-            "Slider_1": 0.0,
-            "Slider_2": 0.0,
-            # "EE_point": 0.0,
-        },
-    ),
-    actuators = {
-        "openarm_shoulder": ImplicitActuatorCfg(
-            joint_names_expr=["Revolute_1", "Revolute_2", "Revolute_3", "Revolute_4"],
-            effort_limit=100.0,
-            velocity_limit=100.0,
-            stiffness=15.0,
-            damping=1.0,
-        ),
-        "openarm_forearm": ImplicitActuatorCfg(
-            joint_names_expr=["Revolute_5", "Revolute_6", "Revolute_7"],
-            effort_limit=100.0,
-            velocity_limit=100.0,
-            stiffness=15.0,
-            damping=1.0,
-        ),
-        "openarm_gripper": ImplicitActuatorCfg(
-            joint_names_expr=["Revolute_8", "Revolute_9", "Revolute_10", "Slider_1", "Slider_2"],# "EE_point"],
-            effort_limit=100.0,
-            velocity_limit=100.0,
-            stiffness=15.0,
-            damping=1.0,
-        ),
-    },
-    soft_joint_pos_limit_factor = 1.0,
-)
+import math
 
 ##
 # Scene definition
@@ -108,7 +45,7 @@ class ReachSceneCfg(InteractiveSceneCfg):
     table = AssetBaseCfg(
         prim_path="{ENV_REGEX_NS}/Table",
         spawn=sim_utils.UsdFileCfg(
-            usd_path=f"{OPENARM_ROOT_DIR}/../usds/openarm/openarm.usd",
+            usd_path=f"{ISAAC_NUCLEUS_DIR}/Props/Mounts/SeattleLabTable/table_instanceable.usd",
         ),
         init_state=AssetBaseCfg.InitialStateCfg(pos=(0.55, 0.0, 0.0), rot=(0.70711, 0.0, 0.0, 0.70711)),
     )
@@ -138,12 +75,12 @@ class CommandsCfg:
         resampling_time_range=(4.0, 4.0),
         debug_vis=True,
         ranges=mdp.UniformPoseCommandCfg.Ranges(
-            pos_x=(0.35, 0.65),
+            pos_x=(0.25, 0.35),
             pos_y=(-0.2, 0.2),
-            pos_z=(0.15, 0.5),
-            roll=(0.0, 0.0),
-            pitch=MISSING,  # depends on end-effector axis
-            yaw=(-3.14, 3.14),
+            pos_z=(0.2, 0.3),
+            roll=(-math.pi/6, math.pi/6),
+            pitch=(math.pi/2, math.pi/2),
+            yaw=(-math.pi/6, math.pi/6),
         ),
     )
 
