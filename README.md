@@ -34,8 +34,6 @@ Replace `<TASK_NAME>` with one of the following available tasks:
 | Lift a cube             | `Isaac-Lift-Cube-OpenArm-v0`   |
 | Open a cabinet's drawer | `Isaac-Open-Drawer-OpenArm-v0` |
 
-#### General Format
-
 **Linux:**
 
 ```bash
@@ -49,8 +47,6 @@ isaaclab.bat -p .\scripts\reinforcement_learning\rsl_rl\train.py --task <TASK_NA
 ```
 
 ### ④ Replay Trained Model
-#### General Format
-
 **Linux:**
 
 ```bash

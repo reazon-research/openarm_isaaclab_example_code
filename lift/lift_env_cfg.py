@@ -24,6 +24,7 @@ from isaaclab.utils.assets import ISAAC_NUCLEUS_DIR
 
 import isaaclab_tasks.manager_based.openarm_manipulation.lift.mdp as mdp
 
+import math
 ##
 # Scene definition
 ##
@@ -79,7 +80,7 @@ class CommandsCfg:
         resampling_time_range=(5.0, 5.0),
         debug_vis=True,
         ranges=mdp.UniformPoseCommandCfg.Ranges(
-            pos_x=(0.2, 0.3), pos_y=(-0.2, 0.2), pos_z=(0.15, 0.25), roll=(0.0, 0.0), pitch=(0.0, 0.0), yaw=(0.0, 0.0)
+            pos_x=(0.25, 0.35), pos_y=(-0.2, 0.2), pos_z=(0.2, 0.3), roll=(0.0, 0.0), pitch=(math.pi/2, math.pi/2), yaw=(0.0, 0.0)
         ),
     )
 
